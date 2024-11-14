@@ -6,7 +6,7 @@ export  function Forgotpasswordpage() {
   const [showAlert, setShowAlert] = useState(""); // State to handle alert messages
 
   const handleResetRequest = async () => {
-    // Validate if email is provided
+    
     if (!email) {
       setShowAlert("Please enter your email.");
       return;

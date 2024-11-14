@@ -10,7 +10,7 @@ export function Resetpassword() {
   const [tokenValid, setTokenValid] = useState(false); // Track if token is valid
 const navigate=useNavigate()
   useEffect(() => {
-    // Check if the token is valid by sending a request to the backend
+    
     if (token) {
       fetch(`${API}/user/resetpassword/${token}`)
         .then((response) => response.json())
@@ -51,7 +51,7 @@ const navigate=useNavigate()
 
       if (response.ok) {
         setMessage(result.message);
-        // Redirect to login or another page
+        // Redirect to login 
         navigate("/");
       } else {
         setMessage(result.error);
@@ -90,7 +90,7 @@ const navigate=useNavigate()
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
-             {/* Show message if available */}
+             
             <div className="d-grid gap-2 col-12 mx-auto mt-5">
               <button className="btn btn-primary" type="submit">Reset password</button>
             </div>
