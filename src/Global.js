@@ -1,0 +1,1 @@
+export const API="https://password-reset-server-2.onrender.com"

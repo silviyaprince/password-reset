@@ -2,6 +2,7 @@ import React from 'react'
 import{useState} from "react";
 import{useNavigate} from "react-router-dom";
 import { Button, TextField, Typography } from "@mui/material";
+import { API } from "./Global";
 
 const Signup = () => {
   const navigate=useNavigate()
@@ -19,7 +20,7 @@ const Signup = () => {
           password
       }
 
-      const res=await fetch("http://localhost:8060/user/signup",{
+      const res=await fetch(`${API}/user/signup`,{
           method:"POST",
           body:JSON.stringify(payload),
           headers:{

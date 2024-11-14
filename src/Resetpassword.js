@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { useParams ,useNavigate} from "react-router-dom";
+import { API } from "./Global";
 
 export function Resetpassword() {
   const { token } = useParams();
@@ -11,7 +12,7 @@ const navigate=useNavigate()
   useEffect(() => {
     // Check if the token is valid by sending a request to the backend
     if (token) {
-      fetch(`http://localhost:8060/user/resetpassword/${token}`)
+      fetch(`${API}/user/resetpassword/${token}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.message === "Token valid. You can now reset your password.") {
@@ -38,7 +39,7 @@ const navigate=useNavigate()
 
     try {
       // Send request to the backend to update the password
-      const response = await fetch("http://localhost:8060/user/resetpassword/update", {
+      const response = await fetch(`${API}/user/resetpassword/update`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

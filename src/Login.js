@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button, TextField, Typography } from "@mui/material";
 import { useState } from "react";
+import { API } from "./Global";
 const Login = () => {
     const navigate=useNavigate()
     const[email,setEmail]=useState("")
@@ -14,7 +15,7 @@ const Login = () => {
             password
         }
 
-        const res=await fetch("http://localhost:8060/user/login",{
+        const res=await fetch(`${API}/user/login`,{
             method:"POST",
             body:JSON.stringify(payload),
             headers:{
