@@ -19,7 +19,7 @@ const Signup = () => {
           password
       }
 
-      const res=await fetch("http://localhost:8050/user/signup",{
+      const res=await fetch("http://localhost:8060/user/signup",{
           method:"POST",
           body:JSON.stringify(payload),
           headers:{
